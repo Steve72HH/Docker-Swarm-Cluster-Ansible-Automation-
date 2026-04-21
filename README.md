@@ -73,19 +73,25 @@ TCP 2377
 TCP/UDP 7946
 UDP 4789
 
-🔥 Use Cases
+##🔥 Use Cases
 Distributed applications
 Load-balanced services
 Tor relay infrastructure
 Monitoring stacks
 Multi-region deployments
 
-🛠️ Future Improvements
+##🛠️ Future Improvements
 Portainer integration
 Prometheus & Grafana monitoring
 Provider-based labeling
 Multi-manager HA setup
 CI/CD (GitHub Actions)
+
+Voraussetzung (einmalig)
+1. SSH Key für GitHub Actions erstellen
+Auf deinem lokalen System:
+ssh-keygen -t ed25519 -f github-deploy-key
+
 
 👨‍💻 Author
 
