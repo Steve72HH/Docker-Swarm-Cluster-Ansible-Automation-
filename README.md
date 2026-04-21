@@ -235,6 +235,7 @@ This project is licensed under the MIT License.
 ## 👨‍💻 Author
 
 Stephan Miebach – IT System Administrator
+
 Focus: Automation, Distributed Systems, Security, Tor, Linux, AI
 
 ---
