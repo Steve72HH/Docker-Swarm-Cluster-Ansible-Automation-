@@ -7,7 +7,7 @@ It is designed for real-world infrastructure with a focus on scalability, automa
 
 ---
 
-## 🧠 Key Features
+🧠 Key Features
 
 - 🔧 Automated Docker installation on all nodes
 - 🌐 Multi-provider cluster (Hetzner, OVH, etc.)
@@ -19,7 +19,7 @@ It is designed for real-world infrastructure with a focus on scalability, automa
 
 ---
 
-## 🏗️ Architecture
+🏗️ Architecture
 
 - **1 Manager Node**
 - **Multiple Worker Nodes**
