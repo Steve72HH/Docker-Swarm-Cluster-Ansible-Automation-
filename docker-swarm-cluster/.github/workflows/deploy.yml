@@ -1,0 +1,28 @@
+name: Deploy Swarm
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: root
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /opt/docker-swarm-cluster || git clone https://github.com/USER/REPO.git /opt/docker-swarm-cluster
+            cd /opt/docker-swarm-cluster
+            git pull
+
+            docker stack deploy -c stacks/reverse-proxy/docker-compose.yml proxy
+            docker stack deploy -c stacks/monitoring/docker-compose.yml monitoring
+            docker stack deploy -c stacks/security/docker-compose.yml security
