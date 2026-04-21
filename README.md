@@ -7,15 +7,15 @@ It is designed for real-world infrastructure with a focus on scalability, automa
 
 ---
 
-🧠 Key Features
+# 🧠 Key Features
 
-- 🔧 Automated Docker installation on all nodes
-- 🌐 Multi-provider cluster (Hetzner, OVH, etc.)
-- ⚙️ Fully automated Swarm initialization and node joining
-- 🧠 Idempotent Ansible playbooks (safe re-runs)
-- 🌍 Geo-aware node labeling (country-based placement)
-- 🔐 Firewall preparation (Swarm ports)
-- 🧩 Clean separation of manager and worker roles
+##### - 🔧 Automated Docker installation on all nodes
+###### - 🌐 Multi-provider cluster (Hetzner, OVH, etc.)
+##### -⚙️ Fully automated Swarm initialization and node joining
+###### - 🧠 Idempotent Ansible playbooks (safe re-runs)
+###### - 🌍 Geo-aware node labeling (country-based placement)
+###### - 🔐 Firewall preparation (Swarm ports)
+##### -🧩 Clean separation of manager and worker roles
 
 ---
 
@@ -28,7 +28,7 @@ It is designed for real-world infrastructure with a focus on scalability, automa
 
 ---
 
-## 🌍 Geo-Aware Scheduling
+🌍 Geo-Aware Scheduling
 
 Each node is automatically labeled based on its public IP:1. Prepare your inventory
 
@@ -96,6 +96,3 @@ ssh-keygen -t ed25519 -f github-deploy-key
 👨‍💻 Author
 
 Stephan Miebach – IT System Administrator focused on automation, distributed systems, and infrastructure engineering.
-
-🧠 Architektur Autodeploy
-Git Push → GitHub Actions → SSH → Ansible Master → Playbook → Cluster
