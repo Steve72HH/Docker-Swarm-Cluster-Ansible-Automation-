@@ -1,0 +1,12 @@
+services:
+  crowdsec:
+    image: crowdsecurity/crowdsec
+    volumes:
+      - ../../configs/crowdsec/acquis.yaml:/etc/crowdsec/acquis.yaml
+    deploy:
+      replicas: 1
+
+  bouncer:
+    image: crowdsecurity/traefik-bouncer
+    environment:
+      - CROWDSEC_API_KEY=${CROWDSEC_API_KEY}
