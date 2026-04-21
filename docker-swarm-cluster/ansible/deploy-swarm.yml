@@ -1,1 +1,30 @@
+---
+- name: Setup Docker Swarm Cluster
+  hosts: manager
+  become: true
 
+  tasks:
+    - name: Init Swarm
+      command: docker swarm init
+      register: swarm_init
+      failed_when: false
+
+    - name: Get join token
+      command: docker swarm join-token -q worker
+      register: worker_token
+
+    - name: Set fact
+      set_fact:
+        swarm_worker_token: "{{ worker_token.stdout }}"
+
+- name: Join Workers
+  hosts: workers
+  become: true
+
+  tasks:
+    - name: Join swarm
+      command: >
+        docker swarm join
+        --token {{ hostvars[groups['manager'][0]].swarm_worker_token }}
+        {{ hostvars[groups['manager'][0]].ansible_host }}:2377
+      ignore_errors: true
